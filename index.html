@@ -49,17 +49,57 @@
         border: 1px solid #10b981;
         border-radius: 5px;
         box-shadow: 3px 3px 6px #10b981;;
-        padding: 0 20px;
+        padding: 0 20px 20px 20px;
         background-color: #d1fae5;
       }
       a {
         color: #2563eb;
         font-weight: bold;
       }
+      .donor-links a {
+        padding: 10px 20px;
+        display: inline-block;
+        background-color: #b91c1c;
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        margin: 40px 20px 20px 20px;
+      }
+      .cta {
+        display: none;
+      }
+      .select {
+        margin: 0 10px;
+        padding: 8px;
+        background-color: #ecfdf5;
+        border: 1px solid #10b981;
+      }
+      .select:hover {
+        cursor: pointer;
+      }
     </style>
     <script>
+      function hideCtas() {
+        var ctas = document.getElementsByClassName("cta");
+        for (let i=0; i<ctas.length; i++) {
+          ctas[i].style.display = "none";
+        }
+      }
       window.onload = function() {
-        console.log("onload");
+        var sel = document.getElementById("country");
+        if (sel) {
+          sel.onchange = function(e) {
+            hideCtas();
+            var cta = document.getElementById(e.target.value);
+            if (cta) {
+              cta.style.display = "block";
+            }
+          }
+        }
+        const uk_cta = document.getElementById("UK");
+        if (uk_cta) {
+          uk_cta.style.display = "block";
+        }
       }
     </script>
     <title>Evie</title>
@@ -81,9 +121,9 @@
       Syndrome (MAS) and requires a stem cell transplant to treat her condition.
     </p>
     <p>
-      Evie’s father, Daven, shares why they are asking people to
+      Evie's father, Daven, shares why they are asking people to
       <a
-        href="https://www.anthonynolan.org/help-save-a-life/join-stem-cell-register"
+        href="#join"
         >join the register:</a
       >
     </p>
@@ -113,7 +153,7 @@
     </p>
     <img src="./Evie-Sanassy_4.jpg" />
     <p>
-      The search for Evie’s perfect match is made more difficult due to her
+      The search for Evie's perfect match is made more difficult due to her
       unique genetic makeup. Patients who are White have a 72% chance of finding
       the best match from an unrelated donor but this drops to a 37% chance for
       patients from minority ethnic backgrounds, like Evie. Evie has a mixed
@@ -121,17 +161,18 @@
       Nolan is particularly keen on people from South Asian backgrounds to
       consider
       <a
-        href="https://www.anthonynolan.org/help-save-a-life/join-stem-cell-register"
+        href="#join"
         >joining its register</a
       >
       to help reduce these differences.
     </p>
     <div class="register">
+      <a name="join"></a>
       <p>Becoming a donor is simple and easy - checking for a match is as simple as performing a mouth swab.</p>
       <p>There are different donor registration organizations depending on where you live.</p>
       <label for="country">
         I live in
-        <select>
+        <select class="select" id="country">
           <option value="Africa">Africa</option>
           <option value="Chile">Chile</option>
           <option value="Germany">Germany</option>
@@ -141,7 +182,29 @@
           <option value="US">United States</option>
         </select>
       </label>
-      <p><button>Help out</button></p>
+      <div class="donor-links">
+        <div id="Africa" class="cta">
+          <a href="https://www.dkms-africa.org/register-now">Join the Africa stem cell register</a>
+        </div>
+        <div id="Chile" class="cta">
+          <a href="https://www.dkms.cl/registrate">Join the Chile stem cell register</a>
+        </div>
+        <div id="Germany" class="cta">
+          <a href="https://www.dkms.de">Join the Germany stem cell register</a>
+        </div>
+        <div id="India" class="cta">
+          <a href="https://www.dkms-bmst.org/register-now">Join the India stem cell register</a>
+        </div>
+        <div id="Poland" class="cta">
+          <a href="https://www.dkms.pl/zarejestruj-sie-teraz">Join the Poland stem cell register</a>
+        </div>
+        <div id="UK" class="cta">
+          <a href="https://www.anthonynolan.org/help-save-a-life/join-stem-cell-register?ref=match4evie_appeal_page">Join the UK stem cell register</a>
+        </div>
+        <div id="US" class="cta">
+          <a href="https://www.dkms.org/register-now">Join the US stem cell register</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
