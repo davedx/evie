@@ -16,6 +16,7 @@
     <meta property="twitter:title" content="#Match4Evie">
     <meta property="twitter:description" content="15-month-old Evie is searching for her perfect stem cell match. If you are of Mauritian or South Asian background, YOU could be the one!">
     <meta property="twitter:image" content="https://davedx.github.io/evie/Evie-Sanassy_1.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       * {
         font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons",
@@ -25,65 +26,128 @@
         background-color: #60a5fa;
         padding: 0;
         margin: 0;
+        width: 100%;
       }
       p, label, select {
         font-size: 19px;
       }
-      .landing {
-        width: 935px;
-        padding: 40px;
-        margin: 0px auto;
-        background-color: white;
-      }
-      .landing img {
-        width: 600px;
-        margin: 20px 0;
-      }
       .header {
         background-color: #064e3b;
         height: 60px;
-      }
-      .header-page {
-        width: 1035px;
-        margin: 0 auto;
+        width: 100%;
       }
       .header-icon {
         float: right;
         margin: 10px 20px;
         width: 40px;
       }
-      h1 {
-        margin: 0;
-        padding: 0 0 20px 0;
+      .landing {
+        margin: 0px auto;
+        background-color: white;
       }
-      .video {
-        padding: 20px 0;
-        width: 540px;
-        margin: 0 auto;
+      @media (min-width: 641px) {
+        h1 {
+          margin: 0;
+          padding: 0 0 20px 0;
+        }
+        .header-page {
+          width: 1035px;
+          margin: 0 auto;
+        }
+        .landing {
+          width: 935px;
+          padding: 40px;
+        }
+        .landing img {
+          width: 600px;
+          margin: 20px 0;
+        }
+        .video {
+          padding: 20px 0;
+          width: 540px;
+          margin: 0 auto;
+        }
+        .register {
+          margin: 40px 0;
+          border: 1px solid #10b981;
+          border-radius: 5px;
+          box-shadow: 3px 3px 6px #10b981;;
+          padding: 0 20px 20px 20px;
+          background-color: #d1fae5;
+        }
+        .donor-links a {
+          padding: 10px 20px;
+          display: inline-block;
+          background-color: #b91c1c;
+          color: white;
+          text-decoration: none;
+          font-size: 22px;
+          margin: 40px 20px 20px 20px;
+        }
+      }
+      @media (max-width: 640px) {
+        h1 {
+          margin: 0;
+          padding: 20px 20px 0 20px;
+        }
+        p {
+          margin: 0 20px;
+        }
+        .landing {
+          width: 100%;
+        }
+        .header-page {
+          width: 100%;
+        }
+        .landing img {
+          width: 100%;
+          margin: 20px 0;
+        }
+        .video {
+          padding: 20px 0;
+          width: 100%;
+          margin: 0 auto;
+        }
+        .register {
+          margin: 40px 0;
+          border-top: 1px solid #10b981;
+          border-bottom: 1px solid #10b981;
+          padding: 20px;
+          background-color: #d1fae5;
+        }
+        .register p {
+          margin: 0;
+        }
+        .register label {
+          display: block;
+          margin: 20px 0;
+        }
+        .donor-links a {
+          padding: 10px 0px;
+          width: 100%;
+          text-align: center;
+          display: inline-block;
+          background-color: #b91c1c;
+          color: white;
+          text-decoration: none;
+          font-size: 22px;
+          margin: 10px 0;
+        }
+        .donor-links-footer {
+          height: 80px;
+          background-color: white;
+        }
+      }
+      .landing-right {
+        display: flex;
+        justify-content: flex-end;
       }
       .match {
         color: #6ee7b7;
       }
-      .register {
-        margin: 40px 0;
-        border: 1px solid #10b981;
-        border-radius: 5px;
-        box-shadow: 3px 3px 6px #10b981;;
-        padding: 0 20px 20px 20px;
-        background-color: #d1fae5;
-      }
       a {
         color: #2563eb;
         font-weight: bold;
-      }
-      .donor-links a {
-        padding: 10px 20px;
-        display: inline-block;
-        background-color: #b91c1c;
-        color: white;
-        text-decoration: none;
-        font-size: 22px;
-        margin: 40px 20px 20px 20px;
       }
       .cta {
         display: none;
@@ -175,7 +239,9 @@
       are needed. Signing up is an amazing way to support your own community and
       people of similar heritage.&quot;
     </p>
-    <img src="./Evie-Sanassy_4.jpg" />
+    <div class="landing-right">
+      <img src="./Evie-Sanassy_4.jpg" />
+    </div>
     <p>
       The search for Evie's perfect match is made more difficult due to her
       unique genetic makeup. Patients who are White have a 72% chance of finding
@@ -230,5 +296,6 @@
         </div>
       </div>
     </div>
+    <div class="donor-links-footer"></div>
   </body>
 </html>
